@@ -1,39 +1,40 @@
-    <!-- Left side (Burgers Available) -->
-      <h3 class="submitFont">Burgers Available</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
       <div id="burgersAvailable">
-
-        <!-- Dynamically Add User Burgers Here -->
         {{#each burgers}}
-          {{#unless devoured}}
-          <form action="burger/eat/{{id}}" method="POST">
-            <div class="input-group">
-              <li class="form-control">{{id}}. {{burger_name}}</li>
-                <span class="input-group-btn">
-                  <button class="btn btn-danger devour-button" type="submit">Devour It!</button>
-                </span>
-            </div>
-          </form>
-          {{/unless}}
+        {{#unless devoured}}
+        <form action="burger/eat/{{id}}" method="POST">
+          <div class="input-group">
+            <li class="form-control">{{id}}. {{burger_name}}</li>
+            <span class="input-group-btn">
+              <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+            </span>
+          </div>
+        </form>
+        {{/unless}}
         {{/each}}
 
       </div>
     </div>
-
-    <div class="col-md-4"></div> 
-
-    <!-- Right side (Burgers Devoured) -->
-      <h3 class="submitFont">Burgers Devoured</h3>
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
       <div id="alreadyEaten">
-
-        <!-- Dynamically Insert Devoured Burgers Here -->
         {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="input-group">
-              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-            </div>
-          {{/if}}
+        {{#if this.devoured}}
+        <div class="input-group">
+          <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+        </div>
+        {{/if}}
         {{/each}}
 
       </div>
     </div>
+  </div>
+</div>
+</div>
+
+<div class="col-md-4"></div>
+</div>
 </div>
