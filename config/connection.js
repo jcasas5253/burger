@@ -10,9 +10,9 @@ var connection = mysql.createConnection({
 });
 
 if (proccess.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+    connection1 = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-    connection = mysql.createConnection({
+    connection1 = mysql.createConnection({
         host: 'localhost',
         user: 'root',
         password: 'hacktheplanet',
