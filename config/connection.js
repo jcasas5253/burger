@@ -1,16 +1,5 @@
 var mysql = require('mysql');
 
-if (proccess.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'hacktheplanet',
-        database: 'todoagain_db'
-    });
-};
-
 var connection = mysql.createConnection({
     host: 'localhost',
     port: 3307,
@@ -25,5 +14,17 @@ connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId);
 });
+
+
+if (proccess.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'hacktheplanet',
+        database: 'todoagain_db'
+    });
+};
 
 module.exports = connection;
