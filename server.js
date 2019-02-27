@@ -16,6 +16,11 @@ app.set('view engine', 'handlebars');
 var router = require('./controllers/burgers_controller.js');
 app.use('/', router);
 
+// router.get('/*', function (req, res) {
+//   res.redirect('/');
+// });
+
+
 
 
 server.listen(PORT, function() {
