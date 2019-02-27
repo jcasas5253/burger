@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser');
+let server = require('http').Server(app);
 
 var PORT = process.env.PORT || 8080;
 
@@ -17,9 +18,8 @@ app.use('/', router);
 
 
 
-app.listen(PORT, function() 
-{
-  console.log("App connected on " + PORT);
+server.listen(PORT, function() {
+  console.log("App is running on port " + PORT);
 });
 
 
