@@ -19,13 +19,17 @@ app.use('/', router);
 // router.get('/*', function (req, res) {
 //   res.redirect('/');
 // });
-
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
 
 
 
 server.listen(PORT, function() {
   console.log("App is running on port " + PORT);
 });
+
+
 
 
     
